@@ -5,7 +5,8 @@
 
     if(isset($_POST["submit"])){
         if (!empty(getName())) {
-            setcookie("name", getName(), time() + 86400);
+            setcookie("name", getName(), time() + 86400,"/");
+            header('Location: /php-practice/dashboard/');
         }
         else {
             echo "name can't be empty";
