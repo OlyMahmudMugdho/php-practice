@@ -1,15 +1,3 @@
-<?php
-    $submitted = isset($_GET["name"]);
-
-    if ($submitted) {
-        echo htmlspecialchars($_GET["name"]) . "<br>";
-        echo "filter_input() <br>";
-        $age = filter_input(INPUT_GET, "age",FILTER_SANITIZE_SPECIAL_CHARS);
-        echo $age . "<br>";
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,3 +15,16 @@
     </form>
 </body>
 </html>
+
+
+
+<?php
+    $submitted = isset($_GET["name"]);
+
+    if ($submitted) {
+        echo htmlspecialchars($_GET["name"]) . "<br>";
+        echo "filter_input() <br>";
+        $age = filter_input(INPUT_GET, "age",FILTER_SANITIZE_SPECIAL_CHARS);
+        echo $age . "<br>";
+    }
+?>
