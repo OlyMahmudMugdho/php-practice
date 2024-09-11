@@ -22,8 +22,10 @@
     $submitted = isset($_POST["name"]);
 
     if ($submitted) {
-        echo htmlspecialchars($_POST["name"]) . "<br>";
+        $name = filter_var($_POST["name"], FILTER_SANITIZE_SPECIAL_CHARS);
         $age = filter_input(INPUT_POST, "age",FILTER_SANITIZE_SPECIAL_CHARS);
+
+        echo $name . "<br>";
         echo $age . "<br>";
     }
 ?>
