@@ -27,10 +27,13 @@ $message = null;
 if ($dbname !== null) {
     $sql = "CREATE DATABASE $dbname";
 
-    if (($conn->query($sql)) === TRUE) {
-        $message = "$dbname database created successfully";
-    } else {
-        $message = "failed to create database";
+    try {
+        if (($conn->query($sql)) === TRUE) {
+            $message = "$dbname database created successfully";
+        }
+    } catch (Exception $e) {
+        $message = $e->getMessage() . "<br>";
+
     }
 }
 
